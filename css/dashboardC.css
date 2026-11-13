@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --text-color: #32363B;
+    --icon-color: #32363B;
+    --icon-menu-color: #707780;
+    --text-selector-color: #355CC0;
+    --background-selected: #EBF0FF;
+    --backgroud-hover: #F7F9FA;
+    --border-color: #E6E9ED;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #eef1f5;
+}
+
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+.menu-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu {
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu div {
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--icon-menu-color);
+    transition: all 0.2s ease;
+}
+
+.menu.menu-toggle div:first-child {
+    width: 40%;
+    transform: rotate(-30deg) translate(-30%,175%);
+}
+
+.menu.menu-toggle div:last-child {
+    width: 40%;
+    transform: rotate(30deg) translate(-30%,-160%);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand .logo {
+    width: 1.7rem;
+}
+
+.brand .name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-title-color);
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.right a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: var(--background-color) ease;
+}
+
+.right a:hover {
+    background-color: var(--backgroud-hover);
+}
+
+.right img {
+    width: 1.7rem;
+    margin: 0.5rem;
+}
+
+.side-bar {
+    margin-top: 3rem;
+    width: 4rem;
+    height: calc(100vh - 2rem);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    background-color: var(--background-color);
+    transition: width 0.5s ease;
+}
+
+.side-bar.menu-toggle {
+    width: 18.75rem;
+}
+
+.side-bar a {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.side-bar a:hover {
+    background-color: var(--backgroud-hover);
+}
+
+.side-bar a.selected {
+    color: var(--text-selector-color);
+    background-color: var(--background-selected);
+
+}
+
+.side-bar img {
+    width: 1.6rem;
+}
+
+.side-bar nav{
+    height: 100%;
+}
+
+.side-bar nav ul{
+    position: relative;
+    height: 100%;
+}
+
+.side-bar nav ul li:last-child{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.container {
+    background: white;
+    width: calc(100% - 4rem);
+    max-width: 80%;
+    margin-top: 5rem;
+    height: 800px;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 6rem;
+    margin-left: 20rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    transition: all .3s ease;
+}
+
+.container.menu-toggle {
+    margin-left: 12rem;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Cada campo */
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs que ocupan las 2 columnas */
+.full{
+    grid-column: span 2;
+}
+
+/* Labels */
+.campo label{
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.box{
+    padding: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Efecto al seleccionar */
+.box:focus{
+    border-color: #915AD8;
+}
+
+/* Textarea */
+textarea{
+    resize: none;
+    height: 140px;
+}
+
+.form-section{
+    flex: 1;
+}
+
+.info {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.icons {
+    display: flex;
+    margin-bottom: 31px;
+}
+
+.icons img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.icons p{
+    font-size: 14px;
+    color: gray;
+}
+.form-section h2 {
+    color: var(--text-title-color);
+    font-size: 45px;
+    margin-top: 60px;
+}
+
+.btn {
+    background-color: #915AD8;
+    border: 0;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 250px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px;
+}
+
+.button-container{
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
